@@ -1,0 +1,1349 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    font-family: Dana;
+}
+
+@font-face {
+    font-family: Dana;
+    src: url(../fonts//Dana-Bold.ttf);
+}
+
+.edge {
+    >.dimentions {
+
+        >.left,
+        >.right {
+            width: 10px;
+            background: rgb(78, 101, 126);
+            background: linear-gradient(360deg, rgba(24, 45, 68, 1) 22%, rgba(85, 108, 135, 1) 50%, rgba(43, 58, 87, 1) 78%);
+        }
+
+        >.front,
+        >.back {
+            height: 10px;
+            background: linear-gradient(360deg, rgba(13, 27, 42, 1) 22%, rgba(65, 90, 119, 1) 50%, rgba(27, 38, 59, 1) 78%);
+        }
+
+        >.surface {
+            background: linear-gradient(360deg, rgba(13, 27, 42, 1) 22%, rgba(65, 90, 119, 1) 50%, rgba(27, 38, 59, 1) 78%);
+        }
+
+        >.bottom-surface {
+            transform: translateZ(-10px);
+        }
+    }
+}
+
+.dimentions {
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+
+    >* {
+        position: absolute;
+        // backface-visibility: hidden;
+    }
+
+    >.surface {
+        // surface of the desk
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    >.left,
+    .right {
+        height: 100%;
+        width: 7px;
+    }
+
+    >.left {
+        left: 0;
+        transform-origin: left;
+        transform: rotateY(90deg);
+    }
+
+    >.right {
+        right: 0;
+        transform-origin: right;
+        transform: rotateY(-90deg);
+    }
+
+    >.front,
+    .back {
+        width: 100%;
+        height: 7px;
+    }
+
+    >.front {
+        bottom: 0;
+        transform-origin: bottom;
+        transform: rotateX(90deg);
+    }
+
+    >.back {
+        top: 0;
+        transform-origin: top;
+        transform: rotateX(270deg);
+    }
+
+    >.bottom-surface {
+        transform: translateZ(-7px);
+    }
+
+}
+
+%axises {
+    &::before {
+        // x axis
+        content: 'left';
+        position: absolute;
+        background-color: orange;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 4%;
+        z-index: 5;
+    }
+
+
+
+    &::after {
+        // y axis
+        content: 'top';
+        position: absolute;
+        background-color: greenyellow;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        width: 4%;
+        height: 100%;
+    }
+
+}
+
+body {
+    // margin: 500px;
+    overflow: scroll;
+    background-color: #262d34;
+}
+
+main {
+    padding: 700px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    perspective: 1260px;
+    // transform: rotateX(1deg) rotateY(1deg) rotateZ(1deg);
+
+    >.wrapper {
+        position: absolute;
+        left: calc(50% - 250px);
+        top: calc(50% - 350px);
+        width: 500px;
+        height: 500px;
+        transform: rotate3d(7, -3, 4, 85deg);
+        transform-style: preserve-3d;
+        // transform: rotateX(79deg) rotateY(0deg) rotateZ(86deg) translateX(500px);
+        // @extend %axises;
+
+        >div {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        >.floor {
+            transform: translateZ(-250px);
+            background: url(../img/floor.jpg);
+            background-size: 250px;
+            position: absolute;
+
+            >.carpet {
+                transform-style: preserve-3d;
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                left: 170px;
+                top: 100px;
+                background-image: url(../img/carpet.jpg);
+                background-size: 350px;
+
+                >.chair {
+                    transform-style: preserve-3d;
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+
+                    >.chair-shadow {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.794);
+                        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.794);
+                        border-radius: 50%;
+                        filter: blur(10px);
+                    }
+
+                    // &:hover>.chair-top {
+                    //     transform: translate(-50%, -50%) translateZ(100px) rotateZ(660deg);
+                    // }
+
+                    >.chair-bottom {
+                        transform-style: preserve-3d;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+
+                        >.chair-stool {
+                            transform-origin: top;
+                            transform-style: preserve-3d;
+                            position: absolute;
+                            width: 14px;
+                            height: 50%;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%) translateZ(20px);
+
+                            >.dimentions {
+
+                                >.left,
+                                >.right {
+                                    background-color: #272727;
+                                    width: 10px;
+                                }
+
+                                >.front,
+                                >.back {
+                                    background-color: #3C3B3B;
+                                    height: 10px;
+                                }
+
+                                >.surface {
+                                    background-color: #3C3B3B;
+                                }
+
+                                >.bottom-surface {
+                                    transform: translateZ(-10px);
+                                }
+                            }
+
+                            // chair's stool wheel
+                            >.wheel {
+                                transform-style: preserve-3d;
+                                position: absolute;
+                                bottom: 0;
+                                width: 100%;
+                                height: 15px;
+                                transform: translateZ(-10px);
+
+
+                                >.dimentions {
+
+                                    >* {
+                                        border-radius: 50%;
+                                    }
+
+                                    >.left,
+                                    >.right {
+                                        background-color: #272727;
+                                        width: 10px;
+                                    }
+
+                                    >.front,
+                                    >.back {
+                                        background-color: #3C3B3B;
+                                        height: 10px;
+                                    }
+
+                                    >.surface {
+                                        background-color: #3C3B3B;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.stool-2 {
+                            transform: translateX(-50%) translateZ(20px) rotateZ(72deg);
+                        }
+
+                        >.stool-3 {
+                            transform: translateX(-50%) translateZ(20px) rotateZ(144deg);
+                        }
+
+                        >.stool-4 {
+                            transform: translateX(-50%) translateZ(20px) rotateZ(206deg);
+                        }
+
+                        >.stool-5 {
+                            transform: translateX(-50%) translateZ(20px) rotateZ(278deg);
+                        }
+
+                        >.stool-6 {
+                            height: 40%;
+                            transform-origin: bottom;
+                            transform: translateX(-50%) translateZ(20px) translateY(-116%) rotateX(270deg);
+                        }
+                    }
+
+                    >.chair-top {
+                        // transition: 5s ease-in-out;
+                        transform-style: preserve-3d;
+                        position: absolute;
+                        width: 80%;
+                        height: 80%;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg);
+                        background-color: #272727;
+                        // transition: 2s;
+
+
+                        &:hover {
+                            cursor: pointer;
+                            animation: chrotate 2s .2s infinite linear;
+                            animation-fill-mode: forwards;
+                        }
+
+                        @keyframes chrotate {
+                            0% {
+                                transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(0);
+                            }
+
+                            100% {
+                                transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(360deg);
+                            }
+                        }
+
+                        >.dimentions {
+
+                            >.left,
+                            >.right {
+                                background: linear-gradient(109.6deg, rgb(29, 43, 70) 11.2%, rgb(52, 85, 123) 91.1%);
+                                width: 20px;
+                            }
+
+                            >.front,
+                            >.back {
+                                background: linear-gradient(109.6deg, rgb(29, 43, 70) 11.2%, rgb(52, 85, 123) 91.1%);
+                                border: 1px solid rgb(165, 113, 0);
+                                height: 20px;
+                            }
+
+                            >.surface {
+                                background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+                                transform-style: preserve-3d;
+
+                                >.resting-back {
+                                    transform-style: preserve-3d;
+                                    position: absolute;
+                                    width: 180px;
+                                    height: 100%;
+                                    right: 0;
+                                    transform-origin: right;
+                                    transform: rotateY(99deg) translateX(20px);
+
+                                    .dimentions {
+
+                                        >.left,
+                                        >.right {
+                                            background: linear-gradient(109.6deg, rgb(29, 43, 70) 11.2%, rgb(52, 85, 123) 91.1%);
+                                            width: 20px;
+                                        }
+
+                                        >.front,
+                                        >.back {
+                                            background: linear-gradient(109.6deg, rgb(29, 43, 70) 11.2%, rgb(52, 85, 123) 91.1%);
+                                            border: 1px solid rgb(165, 113, 0);
+                                            height: 20px;
+                                        }
+
+                                        >.surface {
+                                            background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+                                        }
+
+                                        >.left {
+                                            transform-style: preserve-3d;
+
+                                            >.resting-head {
+                                                transform-style: preserve-3d;
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                transform: rotateY(-15deg) translateZ(3px);
+
+                                                >.dimentions {
+
+                                                    >.left,
+                                                    >.right {
+                                                        background-color: #161616;
+                                                        width: 25px;
+                                                    }
+
+                                                    >.front,
+                                                    >.back {
+                                                        background-color: #2f2f2f;
+                                                        border: 1px solid rgb(165, 113, 0);
+                                                        height: 25px;
+                                                    }
+
+                                                    >.bottom-surface {
+                                                        transform: translateZ(-25px);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                >.handle {
+                                    position: absolute;
+                                    transform-style: preserve-3d;
+                                    width: 15px;
+                                    height: 11px;
+                                    background-color: blue;
+                                    left: 50%;
+
+                                    >.dimentions {
+
+                                        >.left,
+                                        >.right {
+                                            background-color: #161616;
+                                            width: 60px;
+                                        }
+
+                                        >.front,
+                                        >.back {
+                                            background-color: #2f2f2f;
+                                            height: 60px;
+                                        }
+
+                                        >.bottom-surface {
+                                            transform: translateZ(-60px);
+                                        }
+
+                                        >.top-surface {
+                                            transform-style: preserve-3d;
+
+                                            >.handle-top {
+                                                transform-style: preserve-3d;
+                                                position: absolute;
+                                                background-color: blue;
+                                                width: 500%;
+                                                height: 100%;
+                                                left: 50%;
+                                                transform: translate3d(-50%, 0, 7px);
+
+                                                >.dimentions {
+
+                                                    >.left,
+                                                    >.right {
+                                                        background-color: #565656;
+                                                        width: 7px;
+                                                    }
+
+                                                    >.front,
+                                                    >.back {
+                                                        background-color: #494949;
+                                                        height: 7px;
+                                                    }
+
+                                                    >.surface {
+                                                        background-color: #565656;
+                                                    }
+
+                                                    >.bottom-surface {
+                                                        transform: translateZ(-7px);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                >.handle-left {
+                                    transform: translate3d(-50%, 100%, 40px);
+                                    bottom: 0;
+                                }
+
+                                >.handle-right {
+                                    top: 0;
+                                    transform: translate3d(-50%, -100%, 40px);
+                                }
+                            }
+
+                            >.bottom-surface {
+                                transform: translateZ(-20px);
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            >.edge {
+                transform-style: preserve-3d;
+                position: absolute;
+                background: rgb(77, 47, 47);
+                // background: linear-gradient(90deg, rgba(77, 47, 47, 1) 0%, rgba(102, 58, 46, 1) 100%);
+            }
+
+            >.edge-1 {
+                right: 0;
+                transform-origin: top right;
+                height: calc(100% + 10px);
+                width: 14px;
+                transform: rotateY(90deg) translateZ(10px);
+
+                >.dimentions {
+
+                    >.left,
+                    >.right {
+                        width: 10px;
+                        background: rgb(78, 101, 126);
+                        background: linear-gradient(360deg, rgba(120, 51, 70, 1) 0%, rgba(124, 51, 71, 1) 25%, rgba(117, 45, 65, 1) 50%, rgba(124, 51, 71, 1) 75%, rgba(179, 107, 127, 1) 100%);
+                    }
+
+                    >.front,
+                    >.back {
+                        height: 10px;
+                        background: linear-gradient(90deg, rgba(120, 51, 70, 1) 0%, rgba(124, 51, 71, 1) 25%, rgba(117, 45, 65, 1) 50%, rgba(124, 51, 71, 1) 75%, rgba(179, 107, 127, 1) 100%);
+                    }
+
+                    >.surface {
+                        background: linear-gradient(360deg, rgba(80, 26, 41, 1) 0%, rgba(70, 18, 32, 1) 50%, rgba(80, 26, 41, 1) 100%);
+                    }
+
+                    >.bottom-surface {
+                        transform: translateZ(-10px);
+                    }
+                }
+            }
+
+            >.edge-2 {
+                bottom: 0;
+                transform-origin: bottom left;
+                height: 14px;
+                width: 100%;
+                transform: rotateX(-90deg) translateZ(10px);
+
+                >.dimentions {
+
+                    >.left,
+                    >.right {
+                        width: 10px;
+                        background: rgb(78, 101, 126);
+                        background: linear-gradient(90deg, rgba(120, 51, 70, 1) 0%, rgba(124, 51, 71, 1) 25%, rgba(117, 45, 65, 1) 50%, rgba(124, 51, 71, 1) 75%, rgba(179, 107, 127, 1) 100%);
+                    }
+
+                    >.front,
+                    >.back {
+                        height: 10px;
+                        background: linear-gradient(-90deg, rgba(120, 51, 70, 1) 0%, rgba(124, 51, 71, 1) 25%, rgba(117, 45, 65, 1) 50%, rgba(124, 51, 71, 1) 75%, rgba(179, 107, 127, 1) 100%);
+                    }
+
+                    >.surface {
+                        background: linear-gradient(90deg, rgba(80, 26, 41, 1) 0%, rgba(70, 18, 32, 1) 50%, rgba(80, 26, 41, 1) 100%);
+                    }
+
+                    >.bottom-surface {
+                        transform: translateZ(-10px);
+                    }
+                }
+            }
+
+        }
+
+        >.right-wall {
+            bottom: 100%;
+            transform-origin: bottom;
+            transform: rotateX(-90deg) translateY(250px);
+            // background-color: #D9D9D9;
+            background: linear-gradient(to bottom, #1d3557 0%, #457b9d 75%, #a8dadc 100%);
+
+            >.edge {
+                transform-style: preserve-3d;
+                position: absolute;
+                height: 100%;
+                width: 40px;
+                right: 0;
+                transform-origin: right;
+                transform: rotateY(89deg);
+            }
+
+            >.window {
+                width: 250px;
+                height: 175px;
+                position: absolute;
+                left: 10%;
+                top: 5%;
+                transform: translateZ(25px);
+
+
+                >.dimentions {
+
+                    >.left,
+                    >.right {
+                        width: 10px;
+
+                        >.dimentions {
+
+                            >* {
+                                background: linear-gradient(360deg, #274565 22%, #5a7797 50%, #49608a 78%);
+                            }
+
+                            >.left,
+                            >.right {
+                                width: 10px;
+                            }
+
+                            >.front,
+                            >.back {
+                                height: 10px;
+                            }
+
+                            >.surface {
+                                background: linear-gradient(360deg, #0d1b2a 22%, #415a77 50%, #1b263b 78%);
+                            }
+
+                            >.bottom-surface {
+                                transform: translateZ(-10px);
+                            }
+                        }
+                    }
+
+                    >.left {
+                        transform: rotateY(90deg) translateZ(10px) translateX(15px);
+                    }
+
+                    >.right {
+                        transform: rotateY(-90deg) translateZ(9px) translateX(-15px);
+                    }
+
+                    >.front,
+                    >.back {
+                        height: 25px;
+                        opacity: 0;
+                    }
+
+                    >.front {
+                        height: 40px;
+                        right: 0;
+                        transform: rotateX(90deg) translateY(15px);
+                    }
+
+                    >.surface {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    >.top-surface {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    >.bottom-surface {
+                        transform: translateZ(-25px);
+                        // background-color: white;
+
+                        >.glass {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: #D1E9FA;
+                            overflow: hidden;
+
+                            >.shine {
+                                position: absolute;
+                                width: 4px;
+                                height: 100%;
+                                right: 29px;
+                                top: 50%;
+                                background-color: white;
+                                filter: brightness(1.5) blur(3px);
+                                opacity: .2;
+                                transform: translateY(-50%) skewX(30deg);
+                            }
+
+                            >.shine2 {
+                                right: 80px;
+                            }
+
+                            >.shine3 {
+                                right: 130px;
+                            }
+
+                            >.shine4 {
+                                width: 10px;
+                                right: 135px;
+                            }
+
+                            >.shine5 {
+                                width: 40px;
+                                right: 125px;
+                            }
+
+                            >.shine6 {
+                                right: 180px;
+                            }
+
+                            >.shine7 {
+                                width: 30px;
+                                right: 25px;
+                            }
+                        }
+
+                        >.frame {
+                            width: calc(100% - 20px);
+                            left: 15px;
+                            height: 5px;
+                            position: absolute;
+                            top: 60px;
+                            transform: translateZ(5px);
+
+                            >.dimentions {
+                                >* {
+                                    background: linear-gradient(90deg, rgb(30, 33, 37) 0%, rgb(72, 80, 87)100%);
+                                }
+
+                                >.surface {
+                                    background: linear-gradient(80deg, rgb(40, 44, 48) 0%, rgb(67, 75, 83)100%);
+                                }
+
+                                >.left,
+                                >.right {
+                                    background: black;
+                                }
+                            }
+                        }
+
+                        >.frame2 {
+                            transform: translateZ(5px);
+                            left: 10px;
+                            width: 5px;
+                            height: 100%;
+                            top: 0;
+                        }
+                    }
+
+                }
+            }
+
+            >.shelf {
+                position: absolute;
+                width: 200px;
+                height: 60px;
+                right: 11px;
+                bottom: 30%;
+                transform-origin: bottom;
+                transform: rotateX(-90deg);
+
+                >.shadow {
+                    width: 100%;
+                    height: 50%;
+                    transform: rotateX(-90deg);
+                    transform-origin: bottom;
+                    background-color: black;
+                    opacity: .4;
+                    filter: blur(10px);
+
+                }
+
+                >.dimentions {
+
+                    >.right,
+                    >.left {
+                        width: 15px;
+                    }
+
+                    >.front,
+                    >.back {
+                        background-color: #E6E6E6;
+                        height: 15px;
+                    }
+
+                    >.surface {
+                        background-color: #FAFAFA;
+                    }
+
+                    >.bottom-surface {
+                        transform: translateZ(-15px);
+
+                        >.flower {
+                            position: absolute;
+                            width: 40px;
+                            height: 40px;
+                            top: 5px;
+                            right: 30px;
+
+                            >.dimentions {
+
+                                >.right,
+                                >.left {
+                                    width: 40px;
+                                    background-color: #BF6A40;
+                                }
+
+                                >.back,
+                                >.front {
+                                    height: 40px;
+                                    background-color: #995533;
+                                }
+
+
+                                >.bottom-surface {
+                                    transform: translateZ(-40px);
+
+                                    >.plant {
+                                        position: absolute;
+                                        left: -15px;
+                                        top: -60px;
+                                        width: 70px;
+                                        height: 80px;
+                                        transform-origin: bottom;
+                                        transform: rotateX(90deg) translateY(7px);
+
+                                        >img {
+                                            position: absolute;
+                                            left: 50%;
+                                            top: 50%;
+                                            transform-origin: bottom;
+                                            transform: translate(-50%, -50%);
+                                            width: 100%;
+                                            height: 100%;
+
+                                            &:nth-of-type(2) {
+                                                transform: translate(-50%, -50%) rotateY(90deg);
+                                            }
+
+                                            &:nth-of-type(3) {
+                                                transform: translate(-50%, -50%) rotateY(180deg);
+                                            }
+
+                                            &:nth-of-type(4) {
+                                                transform: translate(-50%, -50%) rotateY(270deg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            >.tablet {
+                position: absolute;
+                width: 100px;
+                height: 130px;
+                right: 12%;
+                top: 10%;
+                transform: translateZ(7px);
+
+                >.dimentions {
+
+                    >.left,
+                    >.right {
+                        background-color: #0d1b2a;
+                    }
+
+                    >.front,
+                    >.back {
+                        background-color: #0f1d2f;
+                    }
+
+                    >.surface {
+                        background-color: #0f1d2f;
+
+                        >figure {
+                            position: absolute;
+                            width: 90%;
+                            height: 90%;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            border: 2px solid #BF6A40;
+
+                            >img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                    }
+                }
+
+                >.shadow {
+                    position: absolute;
+                    transform: translateZ(-7px);
+                    width: 110%;
+                    height: 100%;
+                    left: -2%;
+                    bottom: -6%;
+                    background-color: black;
+                    opacity: .3;
+                    filter: blur(3px);
+                }
+
+            }
+        }
+
+        >.left-wall {
+            left: -50%;
+            bottom: 50%;
+            transform-origin: 50% 100%;
+            // background-color: #FAFAFA;
+            background: linear-gradient(to bottom, #0f1d2f 0%, #2b4e63 75%, #618585 100%);
+            transform: rotateZ(-90deg) rotateX(-90deg) translateY(250px);
+            transform-style: preserve-3d;
+
+            >.desk {
+                transform-style: preserve-3d;
+                position: absolute;
+                top: 65%;
+                left: calc(50% - 150px);
+                width: 300px;
+                height: 150px;
+                background-color: black;
+                transform-origin: top;
+                transform: rotateX(90deg);
+
+                >.shadow {
+                    // the desk shadow put on left wall
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 110%;
+                    transform-origin: top;
+                    background-color: #0000004f;
+                    filter: blur(12px);
+                }
+
+                >.shadow1 {
+                    transform: rotateX(-90deg);
+                }
+
+                >.shadow2 {
+                    transform: translateZ(-174px);
+                    height: 100%;
+                }
+
+                >.self-desk {
+                    transform-style: preserve-3d;
+                    width: 100%;
+                    height: 100%;
+
+
+                    >.dimentions {
+
+                        >* {
+                            background-size: 75px;
+                            background-image: url(../img/back.jpg);
+                        }
+
+                        >.left,
+                        .right,
+                        .back,
+                        .front {
+                            filter: brightness(.5);
+                        }
+
+                        >.surface {
+                            transform-style: preserve-3d;
+
+                            >.pad {
+                                transform-style: preserve-3d;
+                                position: absolute;
+                                width: 220px;
+                                height: 100px;
+                                background-image: url(../img/razer.jpg);
+                                background-size: 100% 100%;
+                                bottom: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+
+                            >.keyboard {
+                                transform-style: preserve-3d;
+                                position: absolute;
+                                background-color: snow;
+                                width: 40%;
+                                height: 25%;
+                                left: 50%;
+                                bottom: 20px;
+                                transform: translateX(-70%) translateZ(4px);
+
+                                >.dimentions {
+
+                                    >.left,
+                                    .right {
+                                        width: 2px;
+                                    }
+
+                                    >.back,
+                                    .front {
+                                        height: 2px;
+                                    }
+
+                                    >.bottom-surface {
+                                        transform: translateZ(-2px);
+                                    }
+
+                                    >.surface {
+                                        transform-style: preserve-3d;
+                                        background-color: #5E5E5E;
+
+                                        >.keycontainer {
+                                            transform-style: preserve-3d;
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 100%;
+                                            bottom: 2px;
+                                            left: 50%;
+                                            transform-origin: bottom;
+                                            transform: translateX(-50%) translateZ(0px) rotateX(1deg);
+
+                                            >.dimentions {
+                                                transform-style: preserve-3d;
+
+
+                                                >.surface {
+                                                    transform-origin: bottom;
+                                                    transform: rotateX(-5deg);
+                                                    background-image: url(../img/keyboard.webp);
+                                                    background-size: 100% 100%;
+                                                }
+
+                                                >.left,
+                                                .right {
+                                                    width: 2px;
+                                                    transform-origin: left bottom;
+                                                    transform: rotateY(90deg) rotateZ(-5deg);
+                                                }
+
+                                                >.left2,
+                                                .right2 {
+                                                    width: 2px;
+                                                    transform-origin: left bottom;
+                                                    transform: rotateY(90deg) rotateZ(-3deg);
+                                                }
+
+                                                >.left3,
+                                                .right3 {
+                                                    width: 2px;
+                                                    transform-origin: left bottom;
+                                                    transform: rotateY(90deg) rotateZ(0deg);
+                                                }
+
+                                                >.back,
+                                                .front {
+                                                    height: 2px;
+                                                }
+
+                                                >.bottom-surface {
+                                                    transform: translateZ(-2px);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+
+                            .mouse {
+                                transform-style: preserve-3d;
+                                position: absolute;
+                                width: 12px;
+                                height: 20px;
+                                background-color: white;
+                                right: 25%;
+                                bottom: 30px;
+                                transform: translateZ(5px);
+
+                                >.dimentions {
+
+                                    >.surface {
+                                        background-color: #5E5E5E;
+
+                                        >.wheel {
+                                            position: absolute;
+                                            background-color: red;
+                                            width: 25%;
+                                            height: 25%;
+                                            left: 50%;
+                                            translate: -50% 0;
+                                            top: 18%;
+                                            filter: blur(1px);
+                                        }
+                                    }
+
+                                    >.left,
+                                    .right {
+                                        width: 5px;
+                                        transform-origin: left bottom;
+                                        transform: rotateY(90deg);
+                                    }
+
+                                    >.back,
+                                    .front {
+                                        height: 5px;
+                                    }
+
+                                    >.bottom-surface {
+                                        transform: translateZ(-5px);
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                >.pc {
+                    transform-style: preserve-3d;
+                    position: absolute;
+                    bottom: 80%;
+                    transform-origin: bottom;
+                    left: calc(50% - 125px);
+                    width: 250px;
+                    height: 100px;
+                    background-color: darkorange;
+                    transform: rotateX(-90deg) translateY(-50px);
+
+                    >.dimentions {
+
+                        >.left,
+                        .right,
+                        .back,
+                        .front {
+                            background-color: #3C3B3B;
+                        }
+
+                        >.surface {
+                            background-color: #272727;
+
+                            >.vidContainer {
+                                width: 102%;
+                                height: 102%;
+
+                                >.frame {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 5px solid #272727;
+                                }
+
+                                >video {
+                                    position: absolute;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+
+                    >.pc-highlight {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-color: rgb(231, 225, 225);
+                        opacity: .4;
+                        // box-shadow: 0px 0px 0px 0px white;
+                        filter: blur(15px);
+                        transform: translateZ(10px);
+                        animation: flicker 1s infinite;
+
+                        @keyframes flicker {
+
+                            0%,
+                            30%,
+                            50%,
+                            80% {
+                                box-shadow: 0px 0px 0px 0px white;
+                            }
+
+                            15%,
+                            65% {
+                                box-shadow: 0px 0px 0px 2px white;
+                            }
+                        }
+                    }
+                }
+
+                >.pcStool {
+                    transform-style: preserve-3d;
+                    position: absolute;
+                    bottom: 80%;
+                    transform-origin: bottom;
+                    height: 50px;
+                    width: 10px;
+                    background-color: black;
+                    transform: rotateX(-90deg) translateX(135px);
+
+                    >.dimentions {
+
+                        >.front,
+                        .back,
+                        .surface {
+                            background-color: rgb(39, 39, 39);
+                        }
+                    }
+                }
+
+                >.foot {
+                    transform-style: preserve-3d;
+                    position: absolute;
+                    left: 20px;
+                    top: calc(50% - 20px);
+                    height: 25px;
+                    width: 8px;
+                    transform: translateZ(-7px);
+
+                    >.vertical {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        transform-style: preserve-3d;
+
+                        >.dimentions {
+
+                            >.front,
+                            >.back,
+                            >.surface {
+                                background-color: rgb(39, 39, 39);
+                            }
+
+                            >.left,
+                            >.right {
+                                width: 162px;
+                                background-color: rgb(60, 59, 59);
+                            }
+
+                            >.front,
+                            >.back {
+                                height: 162px;
+                            }
+                        }
+                    }
+
+                    >.horizontal {
+                        position: absolute;
+                        background-color: blueviolet;
+                        width: 100%;
+                        height: 410%;
+                        transform-style: preserve-3d;
+                        transform-origin: top;
+                        transform: translateZ(-162px) translateY(-40px);
+
+                        >.dimentions {
+
+                            >.front,
+                            >.back,
+                            >.surface {
+                                background-color: rgb(39, 39, 39);
+                            }
+
+                            >.bottom-surface {
+                                transform: translateZ(-5px);
+                            }
+
+                            >.left,
+                            >.right {
+                                width: 5px;
+                                background-color: rgb(60, 59, 59);
+                            }
+
+                            >.front,
+                            >.back {
+                                height: 5px;
+                            }
+                        }
+                    }
+                }
+
+                >.foot2 {
+                    left: 250px;
+                }
+            }
+
+            >.tablet {
+                position: absolute;
+                top: 5%;
+                left: 50%;
+                width: 250px;
+                height: 100px;
+                transform: translateX(-50%) translateZ(7px);
+
+                >.dimentions {
+
+                    >.left,
+                    >.right {
+                        background-color: #0d1b2a;
+                    }
+
+                    >.front,
+                    >.back {
+                        background-color: #0f1d2f;
+                    }
+
+                    >.surface {
+                        background-color: #0f1d2f;
+
+                        >h4 {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            font-size: 45px;
+                            transform: translate(-50%, -50%);
+                            color: silver;
+                        }
+
+                    }
+                }
+
+                >.shadow {
+                    position: absolute;
+                    transform: translateZ(-7px);
+                    width: 100%;
+                    height: 100%;
+                    left: -2%;
+                    bottom: -8%;
+                    background-color: black;
+                    opacity: .35;
+                    filter: blur(3px);
+                }
+            }
+
+            >.edge {
+                transform-style: preserve-3d;
+                position: absolute;
+                height: 100%;
+                width: 40px;
+                // background-color: #D9D9D9;
+                background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+                left: 0;
+                transform-origin: left;
+                transform: rotateY(-89deg);
+
+            }
+        }
+    }
+
+}

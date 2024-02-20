@@ -1,0 +1,1416 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  font-family: Dana;
+}
+
+@font-face {
+  font-family: Dana;
+  src: url(../fonts//Dana-Bold.ttf);
+}
+
+.edge > .dimentions > .left,
+.edge > .dimentions > .right {
+  width: 10px;
+  background: #4e657e;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #182d44), color-stop(50%, #556c87), color-stop(78%, #2b3a57));
+  background: linear-gradient(360deg, #182d44 22%, #556c87 50%, #2b3a57 78%);
+}
+
+.edge > .dimentions > .front,
+.edge > .dimentions > .back {
+  height: 10px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #0d1b2a), color-stop(50%, #415a77), color-stop(78%, #1b263b));
+  background: linear-gradient(360deg, #0d1b2a 22%, #415a77 50%, #1b263b 78%);
+}
+
+.edge > .dimentions > .surface {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #0d1b2a), color-stop(50%, #415a77), color-stop(78%, #1b263b));
+  background: linear-gradient(360deg, #0d1b2a 22%, #415a77 50%, #1b263b 78%);
+}
+
+.edge > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+.dimentions {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dimentions > * {
+  position: absolute;
+}
+
+.dimentions > .surface {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dimentions > .left,
+.dimentions .right {
+  height: 100%;
+  width: 7px;
+}
+
+.dimentions > .left {
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.dimentions > .right {
+  right: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.dimentions > .front,
+.dimentions .back {
+  width: 100%;
+  height: 7px;
+}
+
+.dimentions > .front {
+  bottom: 0;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.dimentions > .back {
+  top: 0;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(270deg);
+          transform: rotateX(270deg);
+}
+
+.dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-7px);
+          transform: translateZ(-7px);
+}
+
+body {
+  overflow: scroll;
+  background-color: #262d34;
+}
+
+main {
+  padding: 700px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-perspective: 1260px;
+          perspective: 1260px;
+}
+
+main > .wrapper {
+  position: absolute;
+  left: calc(50% - 250px);
+  top: calc(50% - 350px);
+  width: 500px;
+  height: 500px;
+  -webkit-transform: rotate3d(7, -3, 4, 85deg);
+          transform: rotate3d(7, -3, 4, 85deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > div {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .floor {
+  -webkit-transform: translateZ(-250px);
+          transform: translateZ(-250px);
+  background: url(../img/floor.jpg);
+  background-size: 250px;
+  position: absolute;
+}
+
+main > .wrapper > .floor > .carpet {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 170px;
+  top: 100px;
+  background-image: url(../img/carpet.jpg);
+  background-size: 350px;
+}
+
+main > .wrapper > .floor > .carpet > .chair {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.794);
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.794);
+          box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.794);
+  border-radius: 50%;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 14px;
+  height: 50%;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateZ(20px);
+          transform: translateX(-50%) translateZ(20px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .right {
+  background-color: #272727;
+  width: 10px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .back {
+  background-color: #3C3B3B;
+  height: 10px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .surface {
+  background-color: #3C3B3B;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15px;
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > * {
+  border-radius: 50%;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > .right {
+  background-color: #272727;
+  width: 10px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > .back {
+  background-color: #3C3B3B;
+  height: 10px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .chair-stool > .wheel > .dimentions > .surface {
+  background-color: #3C3B3B;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .stool-2 {
+  -webkit-transform: translateX(-50%) translateZ(20px) rotateZ(72deg);
+          transform: translateX(-50%) translateZ(20px) rotateZ(72deg);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .stool-3 {
+  -webkit-transform: translateX(-50%) translateZ(20px) rotateZ(144deg);
+          transform: translateX(-50%) translateZ(20px) rotateZ(144deg);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .stool-4 {
+  -webkit-transform: translateX(-50%) translateZ(20px) rotateZ(206deg);
+          transform: translateX(-50%) translateZ(20px) rotateZ(206deg);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .stool-5 {
+  -webkit-transform: translateX(-50%) translateZ(20px) rotateZ(278deg);
+          transform: translateX(-50%) translateZ(20px) rotateZ(278deg);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-bottom > .stool-6 {
+  height: 40%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: translateX(-50%) translateZ(20px) translateY(-116%) rotateX(270deg);
+          transform: translateX(-50%) translateZ(20px) translateY(-116%) rotateX(270deg);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg);
+          transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg);
+  background-color: #272727;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top:hover {
+  cursor: pointer;
+  -webkit-animation: chrotate 2s .2s infinite linear;
+          animation: chrotate 2s .2s infinite linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes chrotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(0);
+            transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(360deg);
+            transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(360deg);
+  }
+}
+
+@keyframes chrotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(0);
+            transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(360deg);
+            transform: translate(-50%, -50%) translateZ(100px) rotate(-20deg) rotate(360deg);
+  }
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .right {
+  background: linear-gradient(109.6deg, #1d2b46 11.2%, #34557b 91.1%);
+  width: 20px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .back {
+  background: linear-gradient(109.6deg, #1d2b46 11.2%, #34557b 91.1%);
+  border: 1px solid #a57100;
+  height: 20px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface {
+  background: linear-gradient(109.6deg, #141e30 11.2%, #243b55 91.1%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  right: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(99deg) translateX(20px);
+          transform: rotateY(99deg) translateX(20px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .right {
+  background: linear-gradient(109.6deg, #1d2b46 11.2%, #34557b 91.1%);
+  width: 20px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .back {
+  background: linear-gradient(109.6deg, #1d2b46 11.2%, #34557b 91.1%);
+  border: 1px solid #a57100;
+  height: 20px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .surface {
+  background: linear-gradient(109.6deg, #141e30 11.2%, #243b55 91.1%);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(-15deg) translateZ(3px);
+          transform: rotateY(-15deg) translateZ(3px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head > .dimentions > .right {
+  background-color: #161616;
+  width: 25px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head > .dimentions > .back {
+  background-color: #2f2f2f;
+  border: 1px solid #a57100;
+  height: 25px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .resting-back .dimentions > .left > .resting-head > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-25px);
+          transform: translateZ(-25px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 15px;
+  height: 11px;
+  background-color: blue;
+  left: 50%;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .right {
+  background-color: #161616;
+  width: 60px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .back {
+  background-color: #2f2f2f;
+  height: 60px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-60px);
+          transform: translateZ(-60px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  background-color: blue;
+  width: 500%;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 7px);
+          transform: translate3d(-50%, 0, 7px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .left,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .right {
+  background-color: #565656;
+  width: 7px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .front,
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .back {
+  background-color: #494949;
+  height: 7px;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .surface {
+  background-color: #565656;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle > .dimentions > .top-surface > .handle-top > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-7px);
+          transform: translateZ(-7px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle-left {
+  -webkit-transform: translate3d(-50%, 100%, 40px);
+          transform: translate3d(-50%, 100%, 40px);
+  bottom: 0;
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .surface > .handle-right {
+  top: 0;
+  -webkit-transform: translate3d(-50%, -100%, 40px);
+          transform: translate3d(-50%, -100%, 40px);
+}
+
+main > .wrapper > .floor > .carpet > .chair > .chair-top > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-20px);
+          transform: translateZ(-20px);
+}
+
+main > .wrapper > .floor > .edge {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  background: #4d2f2f;
+}
+
+main > .wrapper > .floor > .edge-1 {
+  right: 0;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  height: calc(100% + 10px);
+  width: 14px;
+  -webkit-transform: rotateY(90deg) translateZ(10px);
+          transform: rotateY(90deg) translateZ(10px);
+}
+
+main > .wrapper > .floor > .edge-1 > .dimentions > .left,
+main > .wrapper > .floor > .edge-1 > .dimentions > .right {
+  width: 10px;
+  background: #4e657e;
+  background: -webkit-gradient(linear, left bottom, left top, from(#783346), color-stop(25%, #7c3347), color-stop(50%, #752d41), color-stop(75%, #7c3347), to(#b36b7f));
+  background: linear-gradient(360deg, #783346 0%, #7c3347 25%, #752d41 50%, #7c3347 75%, #b36b7f 100%);
+}
+
+main > .wrapper > .floor > .edge-1 > .dimentions > .front,
+main > .wrapper > .floor > .edge-1 > .dimentions > .back {
+  height: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#783346), color-stop(25%, #7c3347), color-stop(50%, #752d41), color-stop(75%, #7c3347), to(#b36b7f));
+  background: linear-gradient(90deg, #783346 0%, #7c3347 25%, #752d41 50%, #7c3347 75%, #b36b7f 100%);
+}
+
+main > .wrapper > .floor > .edge-1 > .dimentions > .surface {
+  background: -webkit-gradient(linear, left bottom, left top, from(#501a29), color-stop(50%, #461220), to(#501a29));
+  background: linear-gradient(360deg, #501a29 0%, #461220 50%, #501a29 100%);
+}
+
+main > .wrapper > .floor > .edge-1 > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+main > .wrapper > .floor > .edge-2 {
+  bottom: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  height: 14px;
+  width: 100%;
+  -webkit-transform: rotateX(-90deg) translateZ(10px);
+          transform: rotateX(-90deg) translateZ(10px);
+}
+
+main > .wrapper > .floor > .edge-2 > .dimentions > .left,
+main > .wrapper > .floor > .edge-2 > .dimentions > .right {
+  width: 10px;
+  background: #4e657e;
+  background: -webkit-gradient(linear, left top, right top, from(#783346), color-stop(25%, #7c3347), color-stop(50%, #752d41), color-stop(75%, #7c3347), to(#b36b7f));
+  background: linear-gradient(90deg, #783346 0%, #7c3347 25%, #752d41 50%, #7c3347 75%, #b36b7f 100%);
+}
+
+main > .wrapper > .floor > .edge-2 > .dimentions > .front,
+main > .wrapper > .floor > .edge-2 > .dimentions > .back {
+  height: 10px;
+  background: -webkit-gradient(linear, right top, left top, from(#783346), color-stop(25%, #7c3347), color-stop(50%, #752d41), color-stop(75%, #7c3347), to(#b36b7f));
+  background: linear-gradient(-90deg, #783346 0%, #7c3347 25%, #752d41 50%, #7c3347 75%, #b36b7f 100%);
+}
+
+main > .wrapper > .floor > .edge-2 > .dimentions > .surface {
+  background: -webkit-gradient(linear, left top, right top, from(#501a29), color-stop(50%, #461220), to(#501a29));
+  background: linear-gradient(90deg, #501a29 0%, #461220 50%, #501a29 100%);
+}
+
+main > .wrapper > .floor > .edge-2 > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+main > .wrapper > .right-wall {
+  bottom: 100%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(-90deg) translateY(250px);
+          transform: rotateX(-90deg) translateY(250px);
+  background: -webkit-gradient(linear, left top, left bottom, from(#1d3557), color-stop(75%, #457b9d), to(#a8dadc));
+  background: linear-gradient(to bottom, #1d3557 0%, #457b9d 75%, #a8dadc 100%);
+}
+
+main > .wrapper > .right-wall > .edge {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  right: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(89deg);
+          transform: rotateY(89deg);
+}
+
+main > .wrapper > .right-wall > .window {
+  width: 250px;
+  height: 175px;
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  -webkit-transform: translateZ(25px);
+          transform: translateZ(25px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left,
+main > .wrapper > .right-wall > .window > .dimentions > .right {
+  width: 10px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > *,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > * {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #274565), color-stop(50%, #5a7797), color-stop(78%, #49608a));
+  background: linear-gradient(360deg, #274565 22%, #5a7797 50%, #49608a 78%);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .left,
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .right,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .left,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .right {
+  width: 10px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .front,
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .back,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .front,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .back {
+  height: 10px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .surface,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .surface {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(22%, #0d1b2a), color-stop(50%, #415a77), color-stop(78%, #1b263b));
+  background: linear-gradient(360deg, #0d1b2a 22%, #415a77 50%, #1b263b 78%);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left > .dimentions > .bottom-surface,
+main > .wrapper > .right-wall > .window > .dimentions > .right > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .left {
+  -webkit-transform: rotateY(90deg) translateZ(10px) translateX(15px);
+          transform: rotateY(90deg) translateZ(10px) translateX(15px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .right {
+  -webkit-transform: rotateY(-90deg) translateZ(9px) translateX(-15px);
+          transform: rotateY(-90deg) translateZ(9px) translateX(-15px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .front,
+main > .wrapper > .right-wall > .window > .dimentions > .back {
+  height: 25px;
+  opacity: 0;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .front {
+  height: 40px;
+  right: 0;
+  -webkit-transform: rotateX(90deg) translateY(15px);
+          transform: rotateX(90deg) translateY(15px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .surface {
+  width: 100%;
+  height: 100%;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .top-surface {
+  opacity: 0;
+  visibility: hidden;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-25px);
+          transform: translateZ(-25px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #D1E9FA;
+  overflow: hidden;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  right: 29px;
+  top: 50%;
+  background-color: white;
+  -webkit-filter: brightness(1.5) blur(3px);
+          filter: brightness(1.5) blur(3px);
+  opacity: .2;
+  -webkit-transform: translateY(-50%) skewX(30deg);
+          transform: translateY(-50%) skewX(30deg);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine2 {
+  right: 80px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine3 {
+  right: 130px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine4 {
+  width: 10px;
+  right: 135px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine5 {
+  width: 40px;
+  right: 125px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine6 {
+  right: 180px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .glass > .shine7 {
+  width: 30px;
+  right: 25px;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame {
+  width: calc(100% - 20px);
+  left: 15px;
+  height: 5px;
+  position: absolute;
+  top: 60px;
+  -webkit-transform: translateZ(5px);
+          transform: translateZ(5px);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame > .dimentions > * {
+  background: -webkit-gradient(linear, left top, right top, from(#1e2125), to(#485057));
+  background: linear-gradient(90deg, #1e2125 0%, #485057 100%);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame > .dimentions > .surface {
+  background: linear-gradient(80deg, #282c30 0%, #434b53 100%);
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame > .dimentions > .left,
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame > .dimentions > .right {
+  background: black;
+}
+
+main > .wrapper > .right-wall > .window > .dimentions > .bottom-surface > .frame2 {
+  -webkit-transform: translateZ(5px);
+          transform: translateZ(5px);
+  left: 10px;
+  width: 5px;
+  height: 100%;
+  top: 0;
+}
+
+main > .wrapper > .right-wall > .shelf {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  right: 11px;
+  bottom: 30%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+main > .wrapper > .right-wall > .shelf > .shadow {
+  width: 100%;
+  height: 50%;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  background-color: black;
+  opacity: .4;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .right,
+main > .wrapper > .right-wall > .shelf > .dimentions > .left {
+  width: 15px;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .front,
+main > .wrapper > .right-wall > .shelf > .dimentions > .back {
+  background-color: #E6E6E6;
+  height: 15px;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .surface {
+  background-color: #FAFAFA;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-15px);
+          transform: translateZ(-15px);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 5px;
+  right: 30px;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .right,
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .left {
+  width: 40px;
+  background-color: #BF6A40;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .back,
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .front {
+  height: 40px;
+  background-color: #995533;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-40px);
+          transform: translateZ(-40px);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface > .plant {
+  position: absolute;
+  left: -15px;
+  top: -60px;
+  width: 70px;
+  height: 80px;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(90deg) translateY(7px);
+          transform: rotateX(90deg) translateY(7px);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface > .plant > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface > .plant > img:nth-of-type(2) {
+  -webkit-transform: translate(-50%, -50%) rotateY(90deg);
+          transform: translate(-50%, -50%) rotateY(90deg);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface > .plant > img:nth-of-type(3) {
+  -webkit-transform: translate(-50%, -50%) rotateY(180deg);
+          transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+main > .wrapper > .right-wall > .shelf > .dimentions > .bottom-surface > .flower > .dimentions > .bottom-surface > .plant > img:nth-of-type(4) {
+  -webkit-transform: translate(-50%, -50%) rotateY(270deg);
+          transform: translate(-50%, -50%) rotateY(270deg);
+}
+
+main > .wrapper > .right-wall > .tablet {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+  right: 12%;
+  top: 10%;
+  -webkit-transform: translateZ(7px);
+          transform: translateZ(7px);
+}
+
+main > .wrapper > .right-wall > .tablet > .dimentions > .left,
+main > .wrapper > .right-wall > .tablet > .dimentions > .right {
+  background-color: #0d1b2a;
+}
+
+main > .wrapper > .right-wall > .tablet > .dimentions > .front,
+main > .wrapper > .right-wall > .tablet > .dimentions > .back {
+  background-color: #0f1d2f;
+}
+
+main > .wrapper > .right-wall > .tablet > .dimentions > .surface {
+  background-color: #0f1d2f;
+}
+
+main > .wrapper > .right-wall > .tablet > .dimentions > .surface > figure {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid #BF6A40;
+}
+
+main > .wrapper > .right-wall > .tablet > .dimentions > .surface > figure > img {
+  width: 100%;
+  height: 100%;
+}
+
+main > .wrapper > .right-wall > .tablet > .shadow {
+  position: absolute;
+  -webkit-transform: translateZ(-7px);
+          transform: translateZ(-7px);
+  width: 110%;
+  height: 100%;
+  left: -2%;
+  bottom: -6%;
+  background-color: black;
+  opacity: .3;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+main > .wrapper > .left-wall {
+  left: -50%;
+  bottom: 50%;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0f1d2f), color-stop(75%, #2b4e63), to(#618585));
+  background: linear-gradient(to bottom, #0f1d2f 0%, #2b4e63 75%, #618585 100%);
+  -webkit-transform: rotateZ(-90deg) rotateX(-90deg) translateY(250px);
+          transform: rotateZ(-90deg) rotateX(-90deg) translateY(250px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .left-wall > .desk {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  top: 65%;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 150px;
+  background-color: black;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+main > .wrapper > .left-wall > .desk > .shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  background-color: #0000004f;
+  -webkit-filter: blur(12px);
+          filter: blur(12px);
+}
+
+main > .wrapper > .left-wall > .desk > .shadow1 {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+main > .wrapper > .left-wall > .desk > .shadow2 {
+  -webkit-transform: translateZ(-174px);
+          transform: translateZ(-174px);
+  height: 100%;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > * {
+  background-size: 75px;
+  background-image: url(../img/back.jpg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions .right,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions .back,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions .front {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .pad {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 220px;
+  height: 100px;
+  background-image: url(../img/razer.jpg);
+  background-size: 100% 100%;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  background-color: snow;
+  width: 40%;
+  height: 25%;
+  left: 50%;
+  bottom: 20px;
+  -webkit-transform: translateX(-70%) translateZ(4px);
+          transform: translateX(-70%) translateZ(4px);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions .right {
+  width: 2px;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .back,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions .front {
+  height: 2px;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-2px);
+          transform: translateZ(-2px);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  background-color: #5E5E5E;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 2px;
+  left: 50%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: translateX(-50%) translateZ(0px) rotateX(1deg);
+          transform: translateX(-50%) translateZ(0px) rotateX(1deg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .surface {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(-5deg);
+          transform: rotateX(-5deg);
+  background-image: url(../img/keyboard.webp);
+  background-size: 100% 100%;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions .right {
+  width: 2px;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotateY(90deg) rotateZ(-5deg);
+          transform: rotateY(90deg) rotateZ(-5deg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .left2,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions .right2 {
+  width: 2px;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotateY(90deg) rotateZ(-3deg);
+          transform: rotateY(90deg) rotateZ(-3deg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .left3,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions .right3 {
+  width: 2px;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotateY(90deg) rotateZ(0deg);
+          transform: rotateY(90deg) rotateZ(0deg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .back,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions .front {
+  height: 2px;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface > .keyboard > .dimentions > .surface > .keycontainer > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-2px);
+          transform: translateZ(-2px);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  background-color: white;
+  right: 25%;
+  bottom: 30px;
+  -webkit-transform: translateZ(5px);
+          transform: translateZ(5px);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions > .surface {
+  background-color: #5E5E5E;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions > .surface > .wheel {
+  position: absolute;
+  background-color: red;
+  width: 25%;
+  height: 25%;
+  left: 50%;
+  translate: -50% 0;
+  top: 18%;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions .right {
+  width: 5px;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions > .back,
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions .front {
+  height: 5px;
+}
+
+main > .wrapper > .left-wall > .desk > .self-desk > .dimentions > .surface .mouse > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-5px);
+          transform: translateZ(-5px);
+}
+
+main > .wrapper > .left-wall > .desk > .pc {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  bottom: 80%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  left: calc(50% - 125px);
+  width: 250px;
+  height: 100px;
+  background-color: darkorange;
+  -webkit-transform: rotateX(-90deg) translateY(-50px);
+          transform: rotateX(-90deg) translateY(-50px);
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .pc > .dimentions .right,
+main > .wrapper > .left-wall > .desk > .pc > .dimentions .back,
+main > .wrapper > .left-wall > .desk > .pc > .dimentions .front {
+  background-color: #3C3B3B;
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .dimentions > .surface {
+  background-color: #272727;
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .dimentions > .surface > .vidContainer {
+  width: 102%;
+  height: 102%;
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .dimentions > .surface > .vidContainer > .frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #272727;
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .dimentions > .surface > .vidContainer > video {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main > .wrapper > .left-wall > .desk > .pc > .pc-highlight {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #e7e1e1;
+  opacity: .4;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  -webkit-animation: flicker 1s infinite;
+          animation: flicker 1s infinite;
+}
+
+@-webkit-keyframes flicker {
+  0%,
+  30%,
+  50%,
+  80% {
+    -webkit-box-shadow: 0px 0px 0px 0px white;
+            box-shadow: 0px 0px 0px 0px white;
+  }
+  15%,
+  65% {
+    -webkit-box-shadow: 0px 0px 0px 2px white;
+            box-shadow: 0px 0px 0px 2px white;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  30%,
+  50%,
+  80% {
+    -webkit-box-shadow: 0px 0px 0px 0px white;
+            box-shadow: 0px 0px 0px 0px white;
+  }
+  15%,
+  65% {
+    -webkit-box-shadow: 0px 0px 0px 2px white;
+            box-shadow: 0px 0px 0px 2px white;
+  }
+}
+
+main > .wrapper > .left-wall > .desk > .pcStool {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  bottom: 80%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  height: 50px;
+  width: 10px;
+  background-color: black;
+  -webkit-transform: rotateX(-90deg) translateX(135px);
+          transform: rotateX(-90deg) translateX(135px);
+}
+
+main > .wrapper > .left-wall > .desk > .pcStool > .dimentions > .front,
+main > .wrapper > .left-wall > .desk > .pcStool > .dimentions .back,
+main > .wrapper > .left-wall > .desk > .pcStool > .dimentions .surface {
+  background-color: #272727;
+}
+
+main > .wrapper > .left-wall > .desk > .foot {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 20px);
+  height: 25px;
+  width: 8px;
+  -webkit-transform: translateZ(-7px);
+          transform: translateZ(-7px);
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .vertical {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .front,
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .back,
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .surface {
+  background-color: #272727;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .right {
+  width: 162px;
+  background-color: #3c3b3b;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .front,
+main > .wrapper > .left-wall > .desk > .foot > .vertical > .dimentions > .back {
+  height: 162px;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .horizontal {
+  position: absolute;
+  background-color: blueviolet;
+  width: 100%;
+  height: 410%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: translateZ(-162px) translateY(-40px);
+          transform: translateZ(-162px) translateY(-40px);
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .front,
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .back,
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .surface {
+  background-color: #272727;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .bottom-surface {
+  -webkit-transform: translateZ(-5px);
+          transform: translateZ(-5px);
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .left,
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .right {
+  width: 5px;
+  background-color: #3c3b3b;
+}
+
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .front,
+main > .wrapper > .left-wall > .desk > .foot > .horizontal > .dimentions > .back {
+  height: 5px;
+}
+
+main > .wrapper > .left-wall > .desk > .foot2 {
+  left: 250px;
+}
+
+main > .wrapper > .left-wall > .tablet {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 250px;
+  height: 100px;
+  -webkit-transform: translateX(-50%) translateZ(7px);
+          transform: translateX(-50%) translateZ(7px);
+}
+
+main > .wrapper > .left-wall > .tablet > .dimentions > .left,
+main > .wrapper > .left-wall > .tablet > .dimentions > .right {
+  background-color: #0d1b2a;
+}
+
+main > .wrapper > .left-wall > .tablet > .dimentions > .front,
+main > .wrapper > .left-wall > .tablet > .dimentions > .back {
+  background-color: #0f1d2f;
+}
+
+main > .wrapper > .left-wall > .tablet > .dimentions > .surface {
+  background-color: #0f1d2f;
+}
+
+main > .wrapper > .left-wall > .tablet > .dimentions > .surface > h4 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 45px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: silver;
+}
+
+main > .wrapper > .left-wall > .tablet > .shadow {
+  position: absolute;
+  -webkit-transform: translateZ(-7px);
+          transform: translateZ(-7px);
+  width: 100%;
+  height: 100%;
+  left: -2%;
+  bottom: -8%;
+  background-color: black;
+  opacity: .35;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+main > .wrapper > .left-wall > .edge {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  background: radial-gradient(circle at 10% 20%, #576c75 0%, #253237 100.2%);
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(-89deg);
+          transform: rotateY(-89deg);
+}
+/*# sourceMappingURL=style.css.map */
